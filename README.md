@@ -74,3 +74,7 @@ Found something that breaks for your role, or want a new role preset? Open an is
 | `jobs/` | Background jobs (markdown prompts) and how to schedule them |
 | `data.example/` | Empty starting copy of your private `data/` folder |
 | `scripts/metrics.py` | Append-only metrics store |
+
+---
+
+Made in Fermi with ❤️
