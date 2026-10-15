@@ -9,7 +9,7 @@ Goal: in about 20 minutes, turn a blank repo into one that knows who the user is
 
 ## Step 0: your private data folder
 1. If `data/` doesn't exist, copy `data.example/` to `data/` (`cp -R data.example data`).
-2. Ask: "Is this copy in a private GitHub repo?" If yes, delete the `data/` line from `.gitignore` so your data is backed up with each commit. If no or unsure, leave it ignored: your data stays on this machine only.
+2. If the user is not technical or never set up a GitHub backup (SETUP.md), treat the answer as no and do not ask. Otherwise ask: "Is this copy in a private GitHub repo?" If yes, delete the `data/` line from `.gitignore` so your data is backed up with each commit. If no or unsure, leave it ignored: your data stays on this machine only.
 3. Never commit `data/` to a public repo.
 
 ## Step 1: pick the role preset

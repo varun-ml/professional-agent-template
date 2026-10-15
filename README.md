@@ -12,7 +12,15 @@ your role + goals → 3 focus items → agents find people / posts / events
    → replies tracked → daily digest (max 3 asks) → weekly scorecard
 ```
 
-## Start
+## Start (no coding needed)
+
+Open the Claude desktop app → **Code** tab → pick any folder, and paste:
+
+> Set me up using https://github.com/varun-ml/professional-agent-template/blob/main/SETUP.md
+
+Claude does the setup, interviews you (about 20 minutes), connects Chrome and schedules the daily digest. You only click and answer. Later, say "update my agent" to get improvements.
+
+## Start (manual, for engineers)
 
 1. **Make your own copy** (keeps your data private and lets you pull updates):
    ```bash
