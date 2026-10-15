@@ -14,8 +14,14 @@ your role + goals → 3 focus items → agents find people / posts / events
 
 ## Start
 
-1. Install Claude Code and open this folder: `claude`
-2. Run onboarding: type `/onboard`. It interviews you (about 20 minutes) and writes your profile, focus, voice samples, target-people bar and scorecard, using the preset for your role:
+1. **Make your own copy** (keeps your data private and lets you pull updates):
+   ```bash
+   git clone https://github.com/varun-ml/professional-agent-template.git my-agent
+   cd my-agent
+   git remote rename origin upstream
+   ```
+   Optional backup: create an empty **private** GitHub repo, then `git remote add origin <its url>` and `git push -u origin main`.
+2. Open it in Claude Code (`claude`) and type `/onboard`. It copies `data.example/` to `data/`, interviews you (about 20 minutes) and writes your profile, focus, voice samples, target bar and scorecard, using the preset for your role:
 
    | Role | North star | Main jobs |
    |---|---|---|
@@ -24,9 +30,24 @@ your role + goals → 3 focus items → agents find people / posts / events
    | Engineering leader | Interesting conversations with peers | Teaching posts, people scout, comments |
    | Founder / BD | Conversations with target customers or investors | Account scouting, warm intros, posts |
 
-3. Schedule the jobs (see `jobs/RUNNING.md`). Day one: the daily digest plus your role's main job. The weekly review tells you when to add more.
+3. Schedule the jobs (`jobs/RUNNING.md`). Day one: the daily digest plus your role's main job.
 
-Keep your copy **private**: `data/` holds real people's names and your messages.
+## Where your data lives
+
+| | What | Where |
+|---|---|---|
+| **Engine** (shared) | Skills, jobs, scripts, `AGENTS.md` | This public repo. Same for everyone |
+| **Your data** (private) | Profile, focus, voice samples, taste model, outreach log, metrics, drafts | `data/` in **your** copy only. Ignored by git unless your copy is a private repo |
+
+`data/` never goes back to the template, so updates never touch your data.
+
+## Updates
+
+`git pull upstream main` pulls new skills and fixes. If you changed an engine file, git may ask you to merge. Keep personal tweaks in `data/` where possible (e.g. role rules in `data/profile.md`).
+
+## Contributing
+
+Found something that breaks for your role, or want a new role preset? Open an issue or a PR on this repo. Personal data never goes in a PR.
 
 ## Rules that never change
 
@@ -40,9 +61,8 @@ Keep your copy **private**: `data/` holds real people's names and your messages.
 | Path | What |
 |---|---|
 | `AGENTS.md` | The rules every session and job follows |
-| `PROFILE.md`, `FOCUS.md` | Who you are; your 3 current focus items (written by onboarding) |
 | `.claude/skills/onboard` + `role-*` | Onboarding and role presets |
 | `.claude/skills/{me,voice,people-scout,engage,metrics}` | Shared skills |
 | `jobs/` | Background jobs (markdown prompts) and how to schedule them |
-| `data/` | Your state: outreach log, asks queue, metrics, scorecard, model of your taste, voice samples |
+| `data.example/` | Empty starting copy of your private `data/` folder |
 | `scripts/metrics.py` | Append-only metrics store |

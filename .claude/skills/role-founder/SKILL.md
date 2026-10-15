@@ -26,7 +26,7 @@ Fit: finding the right accounts and people, warm paths to them, and personal out
   - posts published.
 - **Who counts**: the target definitions, verbatim.
 - **Outreach stages**: `sent → replied → conversation → next_step → closed | no_fit`.
-- **FOCUS.md**:
+- **data/focus.md**:
   - the top target segment;
   - warm intros;
   - one post theme that your targets care about.

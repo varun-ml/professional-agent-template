@@ -26,7 +26,7 @@ Fit: teaching posts and substantive comments that make strong peers want to talk
   - hours.
 - **Calibre bar**: their bar, verbatim, with the 3 examples.
 - **Outreach stages**: `sent → replied → met | no_response`, plus the north-star pair.
-- **FOCUS.md**:
+- **data/focus.md**:
   - online presence → conversations;
   - their current deep-work theme (e.g. learning or a talk);
   - one event or person spike.

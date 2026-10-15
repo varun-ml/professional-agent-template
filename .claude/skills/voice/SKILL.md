@@ -5,7 +5,7 @@ description: Use before showing the user any draft message, comment or post. Mak
 
 # Voice
 
-Drafts must sound like the user's own writing, not like an assistant. The evidence is `data/voice/samples.md` (their real messages and posts, collected at onboarding). Re-read it, and the "Role rules" section of `PROFILE.md` (length limits, follow-up rules), before every draft.
+Drafts must sound like the user's own writing, not like an assistant. The evidence is `data/voice/samples.md` (their real messages and posts, collected at onboarding). Re-read it, and the "Role rules" section of `data/profile.md` (length limits, follow-up rules), before every draft.
 
 ## Measure before drafting
 From the samples, note: average sentence length; greeting habit; sign-off habit; language mix; punctuation (count "!"); hedges they use ("I think"); words they never use (the never-use list).

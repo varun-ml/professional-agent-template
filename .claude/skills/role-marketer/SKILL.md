@@ -26,7 +26,7 @@ Fit: one personal voice that builds an audience and turns it into conversations 
   - posts published.
 - **Who counts**: the ICP definition. Comments from non-ICP people are counted separately.
 - **Outreach stages**: `sent → replied → conversation → lead → customer | no_fit`.
-- **FOCUS.md**:
+- **data/focus.md**:
   - a content pillar (the teaching topics);
   - engagement with ICP voices;
   - one campaign or launch if there is one.

@@ -34,7 +34,7 @@ def summary():
     rows = json.loads(OUTREACH.read_text()) if OUTREACH.exists() else []
     touches = [r for r in rows if r.get("kind") != "post"]
     week_ago = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
-    top = [{"name": "North star, last 7 days", "why": "Defined in PROFILE.md; set only on the user's word.",
+    top = [{"name": "North star, last 7 days", "why": "Defined in data/profile.md; set only on the user's word.",
             "value": sum(1 for r in touches if r.get("north_star") and (r.get("north_star_at") or "") >= week_ago),
             "detail": f"{sum(1 for r in touches if r.get('north_star'))} all time; "
                       f"{sum(1 for r in touches if r.get('status') not in (None, 'sent'))} replies from {len(touches)} touches"}]
