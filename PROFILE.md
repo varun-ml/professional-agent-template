@@ -18,3 +18,9 @@ Written by `/onboard`. Edit freely; agents read it every run.
 
 ## Outreach stages
 <to fill by the role preset>
+
+## North star
+`north_star: true` + `north_star_at` on an outreach row means: <to fill>
+
+## Role rules
+<to fill: drafting rules, capacity, where targets show their work, outreach examples>

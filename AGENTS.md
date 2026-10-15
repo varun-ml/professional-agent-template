@@ -17,10 +17,13 @@ Anything that judges fit (a person, a post, a lead, an event, an idea) uses `.cl
 Agents do not ping the user. They queue asks in `data/asks.json` (agent, ask, focus_item, focus_quote, kind, deadline, expires = now + 48 h, state). The daily digest (`jobs/digest.md`) shows at most 3, ranked against `FOCUS.md` and `data/me/model.md`. Expired asks are logged `expired`, not counted as dropped.
 
 ## Outreach log
-`data/outreach.json` gets one row the moment something is sent: date, person, channel, kind, purpose, url, status (`sent` → `replied` → role-specific stages, see the role preset in `PROFILE.md`), reply. Only the user's word sets the north-star field (`interesting`, `screen_booked`, `lead`, as the preset defines).
+`data/outreach.json` gets one row the moment something is sent: date, person, channel, kind, purpose, url, status (`sent` → `replied` → the stages in `PROFILE.md`), reply. The north star is one pair of fields on a row: `north_star: true` and `north_star_at: YYYY-MM-DD`. What it means (an interesting conversation, a screen booked, a lead) is defined in `PROFILE.md`. Only the user's word sets it.
 
 ## Background jobs
 A job runs only if it is in `data/agents.json` with status `active`. Each has one prompt (a file in `jobs/`), one schedule, one state file, and `outward_actions: none`. A job writes only the files its prompt names, plus its `last_run`. A run with nothing new is silent. See `jobs/RUNNING.md`.
+
+## Privacy
+Keep your copy of this repo **private**. `data/` holds real people's names and your messages. Never push it to a public repository, and keep phone numbers and emails out unless the person shared them with you.
 
 ## Explaining things to the user
 Answer first, then the reason. Short sentences. Show the post or the person before the analysis. No marketing adjectives.

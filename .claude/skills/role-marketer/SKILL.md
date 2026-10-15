@@ -16,7 +16,7 @@ Fit: one personal voice that builds an audience and turns it into conversations 
 6. Posting capacity per week (default 2 posts, plus 5 comments).
 
 ## What to write
-- **North star**: *conversations or leads from your target audience per week*. Set only on the user's word (`lead: true` on the outreach row).
+- **North star**: *conversations or leads from your target audience per week*. Set only on the user's word: `north_star: true` and `north_star_at` on the outreach row, meaning a lead or conversation from your target audience.
 - **Scorecard**:
   - impressions (7 days);
   - comments from ICP people per 1,000 impressions, read at day 7;

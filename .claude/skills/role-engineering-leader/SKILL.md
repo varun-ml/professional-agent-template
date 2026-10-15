@@ -16,7 +16,7 @@ Fit: teaching posts and substantive comments that make strong peers want to talk
 6. Hours a week (default 3–5).
 
 ## What to write
-- **North star**: *interesting conversations per week*. Set only on the user's word (`interesting: true`).
+- **North star**: *interesting conversations per week*. Set only on the user's word: `north_star: true` and `north_star_at` on the outreach row, meaning an interesting conversation.
 - **Scorecard**:
   - impressions (7 days);
   - comments from others per 1,000 impressions at day 7;
@@ -25,7 +25,7 @@ Fit: teaching posts and substantive comments that make strong peers want to talk
   - interesting conversations (★);
   - hours.
 - **Calibre bar**: their bar, verbatim, with the 3 examples.
-- **Outreach stages**: `sent → replied → met | no_response`, plus `interesting: true/false`.
+- **Outreach stages**: `sent → replied → met | no_response`, plus the north-star pair.
 - **FOCUS.md**:
   - online presence → conversations;
   - their current deep-work theme (e.g. learning or a talk);

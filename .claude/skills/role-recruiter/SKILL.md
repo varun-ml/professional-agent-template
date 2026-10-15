@@ -16,7 +16,7 @@ Fit: quality sourcing for a few open roles, with personal outreach the recruiter
 6. Daily sending capacity you're comfortable with (default 10–15 personal messages).
 
 ## What to write
-- **North star** (PROFILE.md): *screens booked with qualified candidates per week*. Set only by the recruiter's word (`screen_booked: true` on the outreach row).
+- **North star** (PROFILE.md): *screens booked with qualified candidates per week*. Set only on the user's word: `north_star: true` and `north_star_at` on the outreach row, meaning a screen booked with a qualified candidate.
 - **Scorecard**: candidates surfaced; candidates the recruiter approved; messages sent; reply rate; screens booked (★); time to first reply.
 - **Calibre bar** (PROFILE.md "Who counts"): the role's must-haves, plus evidence in public work. Each surfaced candidate must cite one specific piece of their work: a repo, a post or a talk.
 - **Outreach stages**: `sent → replied → screen_booked → submitted → interviewing → offer → hired | declined`.

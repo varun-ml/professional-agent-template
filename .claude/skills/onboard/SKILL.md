@@ -33,7 +33,9 @@ Run the role skill's questions. It defines the north star, scorecard, calibre ba
 - `FOCUS.md`: 3 focus items from their 4-week answer and the role defaults. Quote their words.
 - `data/me/model.md`: fill each heading from their answers, verbatim with today's date. Leave a heading empty rather than guess.
 - `data/voice/samples.md`: their samples verbatim, the never-use list, the people they admire and avoid.
-- `data/agents.json`: set status `active` only for the jobs the role skill turns on and the user agrees to. Others stay `planned`.
+- `PROFILE.md` "Role rules": copy the role skill's drafting rules, plus the user's capacity (messages and posts a week), where their targets show their work, and their outreach examples (what got replies, what didn't).
+- `data/me/picks.jsonl`: any example people the user named, as `verdict: pick` with their words.
+- `data/agents.json`: day one, turn on `digest` plus the role's main job (recruiter and founder: `scout`; marketer and engineering leader: `inspiration`). Set each job's `schedule` from the role skill (a recruiter's scout runs daily). The other jobs stay `planned` until the first weekly review shows the digest is useful.
 
 ## Step 5: confirm and first run
 1. Show a one-screen summary: north star, 3 focus items, the bar, jobs on, hours a week, what the system will never do.

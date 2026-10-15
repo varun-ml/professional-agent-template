@@ -29,35 +29,28 @@ def add(snap):
 
 
 def summary():
+    import datetime
     snaps = load()
-    if not snaps:
-        return {"top3": []}
-    first, last = snaps[0], snaps[-1]
-    rows = json.loads(OUTREACH.read_text())
-    touches = [r for r in rows if r.get("channel") != "linkedin_post"]
-    # latest reading of each post
+    rows = json.loads(OUTREACH.read_text()) if OUTREACH.exists() else []
+    touches = [r for r in rows if r.get("kind") != "post"]
+    week_ago = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+    top = [{"name": "North star, last 7 days", "why": "Defined in PROFILE.md; set only on the user's word.",
+            "value": sum(1 for r in touches if r.get("north_star") and (r.get("north_star_at") or "") >= week_ago),
+            "detail": f"{sum(1 for r in touches if r.get('north_star'))} all time; "
+                      f"{sum(1 for r in touches if r.get('status') not in (None, 'sent'))} replies from {len(touches)} touches"}]
     posts = {}
-    for s in snaps:
-        for p in s.get("posts", []):
+    for s_ in snaps:
+        for p in s_.get("posts", []):
             posts[p["url"]] = p
     posts = list(posts.values())
-    imp = sum(p["impressions"] for p in posts) or 1
-    out = {
-        "at": last["at"],
-        "top3": [
-            {"name": "North star", "why": "The north star from PROFILE.md, set only on the user's word.",
-             "value": sum(bool(r.get("interesting") or r.get("screen_booked") or r.get("lead") or r.get("conversation")) for r in touches),
-             "detail": f"{sum(r.get('status') in ('replied', 'met') for r in touches)} replies from {len(touches)} touches"},
-            {"name": "Reach: post impressions, 7 days", "why": "Leading signal: are the right people seeing the posts?",
-             "value": last["profile"].get("post_impressions_7d"),
-             "detail": f"was {first['profile'].get('post_impressions_7d')} on {first['at'][:10]}"},
-            {"name": "Resonance: comments per 1,000 impressions", "why": "Comments start conversations; likes do not.",
-             "value": round(1000 * sum(p.get("comments", 0) for p in posts) / imp, 1),
-             "detail": f"{sum(p.get('reactions', 0) for p in posts)} reactions, {sum(p.get('comments', 0) for p in posts)} comments over {len(posts)} posts"},
-        ],
-        "posts": sorted(posts, key=lambda p: p.get("posted", ""), reverse=True),
-        "snapshots": len(snaps),
-    }
+    if posts:  # post metrics only for people who post
+        last = snaps[-1]; imp = sum(p["impressions"] for p in posts) or 1
+        top += [{"name": "Reach: post impressions, 7 days", "why": "Leading signal for posts.",
+                 "value": last["profile"].get("post_impressions_7d"), "detail": f"first snapshot {snaps[0]['at'][:10]}"},
+                {"name": "Resonance: comments per 1,000 impressions", "why": "Comments start conversations.",
+                 "value": round(1000 * sum(p.get("comments", 0) for p in posts) / imp, 1), "detail": f"{len(posts)} posts"}]
+    out = {"at": snaps[-1]["at"] if snaps else None, "top3": top,
+           "posts": sorted(posts, key=lambda p: p.get("posted", ""), reverse=True), "snapshots": len(snaps)}
     SUMMARY.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     return out
 

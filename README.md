@@ -24,7 +24,9 @@ your role + goals → 3 focus items → agents find people / posts / events
    | Engineering leader | Interesting conversations with peers | Teaching posts, people scout, comments |
    | Founder / BD | Conversations with target customers or investors | Account scouting, warm intros, posts |
 
-3. Schedule the jobs (see `jobs/RUNNING.md`). Start with the daily digest only; add the others once it is useful.
+3. Schedule the jobs (see `jobs/RUNNING.md`). Day one: the daily digest plus your role's main job. The weekly review tells you when to add more.
+
+Keep your copy **private**: `data/` holds real people's names and your messages.
 
 ## Rules that never change
 

@@ -16,7 +16,7 @@ Fit: finding the right accounts and people, warm paths to them, and personal out
 6. Weekly capacity: messages and posts.
 
 ## What to write
-- **North star**: *first conversations with target people per week*. Set only on the user's word (`conversation: true`).
+- **North star**: *first conversations with target people per week*. Set only on the user's word: `north_star: true` and `north_star_at` on the outreach row, meaning a first conversation with a target person.
 - **Scorecard**:
   - target people surfaced;
   - warm paths found;
