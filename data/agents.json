@@ -1,0 +1,6 @@
+[
+  {"name": "digest", "purpose": "Daily digest: replies, numbers, at most 3 asks", "prompt": "jobs/digest.md", "schedule": "0 10 * * *", "state_file": "data/asks.json", "outward_actions": "none", "status": "planned", "last_run": null},
+  {"name": "scout", "purpose": "Find people from public work against the bar in PROFILE.md", "prompt": "jobs/scout.md", "schedule": "30 11 * * 4", "state_file": "reports/", "outward_actions": "none", "status": "planned", "last_run": null},
+  {"name": "inspiration", "purpose": "Up to 3 posts worth a substantive reply", "prompt": "jobs/inspiration.md", "schedule": "0 16 * * *", "state_file": "drafts/engage/", "outward_actions": "none", "status": "planned", "last_run": null},
+  {"name": "weekly-review", "purpose": "Scorecard, asks review, model update", "prompt": "jobs/weekly-review.md", "schedule": "0 17 * * 0", "state_file": "data/scorecard.jsonl", "outward_actions": "none", "status": "planned", "last_run": null}
+]
